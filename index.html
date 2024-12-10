@@ -17,11 +17,21 @@
     ></script>
   </head>
   <body>
-    <main>
-      <div class="scroll-watcher"></div>
+    <!-- start Progress bar -->
+    <div class="scroll-watcher"></div>
+    <!-- end Progress bar -->
+    <!-- start header animé -->
+    <header class="header">
+      <h1>Le Scroll driven animation</h1>
+      <div><p>une super fonctionnalité css</p></div>
+    </header>
+    <!-- end header animé -->
 
+    <main>
       <scroll-app></scroll-app>
-      <h1>LE CSS</h1>
+
+      <!-- start apparition image avec view() -->
+
       <figure>
         <img src="./src/img/cj.jpg" alt="CJ" />
         <figcaption>CJ le goat de ce jeu en fait</figcaption>
@@ -34,6 +44,10 @@
         <img src="./src/img/chinese_gopher.jpg" alt="CJ" />
         <figcaption>CJ le goat de ce jeu en fait</figcaption>
       </figure>
+      <!-- end apparition image avec view() -->
+
+      <!-- start scroller horizontale -->
+
       <div class="scroller" data-animated="true" data-direction="left">
         <div class="scroller__inner">
           <figure class="scroller-item">
@@ -70,6 +84,8 @@
           </figure>
         </div>
       </div>
+
+      <!-- end scroller horizontale -->
     </main>
   </body>
 </html>
