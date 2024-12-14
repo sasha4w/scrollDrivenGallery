@@ -9,61 +9,7 @@ class ScrollDrivenExplanations extends HTMLElement {
 
   render() {
     this.innerHTML = `
-      <style>
-        .explanation {
-          max-width: 800px;
-          margin: 0 auto;
-          font-family: Arial, sans-serif;
-          line-height: 1.6;
-        }
-        .section {
-          background-color: oklch(20% 0.1 30);
-          border-radius: 1rem;
-          padding: 1.5rem;
-          margin-bottom: 1.5rem;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        h2 {
-          color: oklch(70% 0.25 50);
-          border-bottom: 2px solid oklch(70% 0.25 50);
-          padding-bottom: 0.5rem;
-          margin-bottom: 1rem;
-        }
-        p {
-          margin-bottom: 1rem;
-        }
-        ul {
-          margin: 0 0 1rem 1.5rem;
-          list-style-type: disc;
-        }
-        code {
-          background-color: oklch(15% 0.1 20);
-          color: oklch(70% 0.25 50);
-          padding: 0.2rem 0.4rem;
-          border-radius: 0.3rem;
-          font-family: 'Courier New', monospace;
-        }
-        pre {
-          background-color: oklch(15% 0.1 20);
-          color: oklch(90% 0.2 70);
-          padding: 1rem;
-          border-radius: 0.5rem;
-          overflow-x: auto;
-        }
-        .demo-box {
-          height: 100px;
-          width: 100%;
-          background-color: oklch(70% 0.2 45);
-          border-radius: 0.5rem;
-          animation: color-shift 2s linear infinite;
-        }
-
-        @keyframes color-shift {
-          0% { background-color: oklch(70% 0.2 45); }
-          50% { background-color: oklch(50% 0.3 60); }
-          100% { background-color: oklch(70% 0.2 45); }
-        }
-      </style>
+     
 
       <div class="explanation">
         <div class="section">
