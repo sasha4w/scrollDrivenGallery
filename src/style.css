@@ -1,3 +1,49 @@
+:root {
+  /* Couleurs principales */
+  --color-primary-orange: oklch(70% 0.25 50); /* Orange lumineux */
+  --color-secondary-orange: oklch(60% 0.2 40); /* Orange plus foncé */
+  --color-dark: oklch(20% 0.1 30); /* Noir profond */
+  --color-light: oklch(95% 0.02 20); /* Gris très clair presque blanc */
+  --color-accent: oklch(55% 0.3 20); /* Nuance d'orange plus riche */
+
+  /* Dégradés */
+  --gradient-orange-dark: linear-gradient(
+    to right,
+    var(--color-primary-orange),
+    var(--color-secondary-orange)
+  );
+
+  /* Autres propriétés */
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+body {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+/* Styles de base avec la nouvelle palette */
+.scroll-watcher {
+  background-color: var(--color-primary-orange);
+}
+
+.scroller-item {
+  background-color: var(--color-secondary-orange);
+  color: var(--color-light);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Styles de texte */
+h1 {
+  color: var(--color-primary-orange);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+p,
+figcaption {
+  color: var(--color-light);
+}
 html {
   background-color: oklch(69.87% 0.1228 291.18);
   color: aliceblue;
@@ -43,7 +89,8 @@ main {
   color: white;
   padding: 20px;
   opacity: 1;
-  animation: fade-out 1s linear forwards;
+  animation: fade-out 2s linear forwards;
+  animation-delay: 3s; /* Délai avant que l'animation commence */
   animation-timeline: view();
   animation-range: exit();
 }
@@ -183,4 +230,73 @@ main {
       }
     }
   }
+}
+scroll-driven-explanations {
+  display: block;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: var(--color-secondary-orange, #333);
+  color: var(--color-light, #fff);
+  border-radius: 1rem;
+}
+scroll-driven-explanations h2 {
+  color: var(--color-primary-orange, #ff6600);
+}
+scroll-driven-explanations .section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: var(--color-dark, #222);
+  border-radius: 0.5rem;
+}
+scroll-driven-compatibility {
+  display: block;
+}
+scroll-driven-compatibility .scroller {
+  height: 25rem;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  border-radius: 1rem;
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+}
+scroll-driven-compatibility .scroller__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  width: max-content;
+}
+scroll-driven-compatibility .scroller-item {
+  flex: 0 0 auto;
+  width: 18rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: oklch(80% 0.1 220);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+scroll-driven-compatibility .scroller-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+scroll-driven-compatibility .scroller-item figcaption {
+  font-size: 1.5rem;
+  color: aliceblue;
+  padding: 0 0.5rem;
 }

@@ -15,6 +15,21 @@
       src="./src/web-component/scroll-app.js"
       type="module"
     ></script>
+    <script
+      defer
+      src="./src/web-component/scroll-driven-explanations.js"
+      type="module"
+    ></script>
+    <script
+      defer
+      src="./src/web-component/scroll-images.js"
+      type="module"
+    ></script>
+    <script
+      defer
+      src="./src/web-component/scroll-driven-compatibility.js"
+      type="module"
+    ></script>
   </head>
   <body>
     <!-- start Progress bar -->
@@ -28,64 +43,13 @@
     <!-- end header animé -->
 
     <main>
-      <scroll-app></scroll-app>
-
-      <!-- start apparition image avec view() -->
-
-      <figure>
-        <img src="./src/img/cj.jpg" alt="CJ" />
-        <figcaption>CJ le goat de ce jeu en fait</figcaption>
-      </figure>
-      <figure>
-        <img src="./src/img/cover9.jpg" alt="CJ" />
-        <figcaption>CJ le goat de ce jeu en fait</figcaption>
-      </figure>
-      <figure>
-        <img src="./src/img/chinese_gopher.jpg" alt="CJ" />
-        <figcaption>CJ le goat de ce jeu en fait</figcaption>
-      </figure>
-      <!-- end apparition image avec view() -->
-
-      <!-- start scroller horizontale -->
-
-      <div class="scroller" data-animated="true" data-direction="left">
-        <div class="scroller__inner">
-          <figure class="scroller-item">
-            <img src="./src/img/chrome.png" alt="Google Chrome" />
-            <figcaption>Google Chrome</figcaption>
-          </figure>
-          <figure class="scroller-item">
-            <img src="./src/img/cj.jpg" alt="Opera" />
-            <figcaption>Opera</figcaption>
-          </figure>
-          <figure class="scroller-item">
-            <img src="./src/img/cj.jpg" alt="Samsung Internet" />
-            <figcaption>Samsung Internet</figcaption>
-          </figure>
-          <figure class="scroller-item">
-            <img src="./src/img/cj.jpg" alt="Microsoft Edge" />
-            <figcaption>Microsoft Edge</figcaption>
-          </figure>
-          <figure class="scroller-item">
-            <img src="./src/img/cj.jpg" alt="Safari" />
-            <figcaption>Safari</figcaption>
-          </figure>
-          <figure class="scroller-item">
-            <img src="./src/img/firefox.png" alt="Mozilla Firefox" />
-            <figcaption>Mozilla Firefox</figcaption>
-          </figure>
-          <figure class="scroller-item">
-            <img src="./src/img/cj.jpg" alt="QQ Browser" />
-            <figcaption>QQ Browser</figcaption>
-          </figure>
-          <figure class="scroller-item">
-            <img src="./src/img/cj.jpg" alt="Baidu Browser" />
-            <figcaption>Baidu Browser</figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <!-- end scroller horizontale -->
+      <scroll-driven-explanations></scroll-driven-explanations>
+      <scroll-images
+        sources="./src/img/cj.jpg, ./src/img/cover9.jpg, ./src/img/chinese_gopher.jpg"
+        alts="CJ, Cover, Gopher"
+        captions="Personnage principal, Couverture du jeu, Mascotte"
+      ></scroll-images>
+      <scroll-driven-compatibility> </scroll-driven-compatibility>
     </main>
   </body>
 </html>
