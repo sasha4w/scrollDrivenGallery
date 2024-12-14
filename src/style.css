@@ -155,20 +155,6 @@ main {
     align-items: center;
     overflow-x: auto;
     border-radius: 1rem;
-    mask: linear-gradient(
-      90deg,
-      transparent,
-      white 20%,
-      white 80%,
-      transparent
-    );
-    -webkit-mask: linear-gradient(
-      90deg,
-      transparent,
-      white 20%,
-      white 80%,
-      transparent
-    );
   }
 
   .scroller__inner {
@@ -258,14 +244,6 @@ scroll-driven-compatibility .scroller {
   align-items: center;
   overflow-x: auto;
   border-radius: 1rem;
-  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-  -webkit-mask: linear-gradient(
-    90deg,
-    transparent,
-    white 20%,
-    white 80%,
-    transparent
-  );
 }
 scroll-driven-compatibility .scroller__inner {
   height: 100%;

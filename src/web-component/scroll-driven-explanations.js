@@ -1,3 +1,4 @@
+import "./scroll-driven-compatibility.js";
 class ScrollDrivenExplanations extends HTMLElement {
   constructor() {
     super();
@@ -124,6 +125,7 @@ class ScrollDrivenExplanations extends HTMLElement {
             Pensez à fournir des fallbacks ou des alternatives basées sur JavaScript pour les navigateurs non compatibles.
           </p>
         </div>
+        <scroll-driven-compatibility> </scroll-driven-compatibility>
       </div>
     `;
   }
