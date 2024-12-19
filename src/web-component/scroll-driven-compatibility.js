@@ -19,14 +19,14 @@ class ScrollDrivenCompatibility extends HTMLElement {
 
   get defaultBrowsers() {
     return [
-      { name: "Google Chrome", img: "./src/img/chrome.png" },
-      { name: "Opera", img: "./src/img/cj.jpg" },
-      { name: "Samsung Internet", img: "./src/img/cj.jpg" },
-      { name: "Microsoft Edge", img: "./src/img/cj.jpg" },
-      { name: "Safari", img: "./src/img/cj.jpg" },
-      { name: "Mozilla Firefox", img: "./src/img/firefox.png" },
-      { name: "QQ Browser", img: "./src/img/cj.jpg" },
-      { name: "Baidu Browser", img: "./src/img/cj.jpg" },
+      { name: "Google Chrome", img: "./src/img/Chrome.svg" },
+      { name: "Opera", img: "./src/img/Opera.svg" },
+      { name: "Samsung Internet", img: "./src/img/Samsung.svg" },
+      { name: "Microsoft Edge", img: "./src/img/Edge.svg" },
+      { name: "Safari", img: "./src/img/Safari.svg" },
+      { name: "Mozilla Firefox", img: "./src/img/Firefox.svg" },
+      { name: "QQ Browser", img: "./src/img/QQ.svg" },
+      { name: "Baidu Browser", img: "./src/img/Baidu.svg" },
     ];
   }
 

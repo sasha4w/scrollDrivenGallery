@@ -1,6 +1,7 @@
 import "./scroll-driven-compatibility.js";
 import "./scroll-images.js";
 import "./code-viewer-component.js";
+import "./browser-compatibility.js";
 class ScrollDrivenExplanations extends HTMLElement {
   constructor() {
     super();
@@ -12,6 +13,7 @@ class ScrollDrivenExplanations extends HTMLElement {
 
   render() {
     this.innerHTML = `
+    <browser-compatibility-message></browser-compatibility-message>
       <div class="explanation">
         <div class="section">
           <h2>La Problématique des Animations Pilotées</h2>
@@ -83,7 +85,7 @@ class ScrollDrivenExplanations extends HTMLElement {
 }
           </code-viewer>
           <scroll-images
-            sources="./src/img/chinese_gopher.jpg"
+            sources="./src/img/sonic.jpg"
             alts="Cover"
             captions="Mascotte"
           ></scroll-images>

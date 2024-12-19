@@ -24,35 +24,35 @@
   border-radius: 8px;
 }
 
-/* Le track (la piste) de la barre de défilement */
+/* Style de la piste (track) de la barre de défilement */
 ::-webkit-scrollbar-track {
-  background: var(--color-dark);
-  border-radius: 8px;
+  background: var(--color-dark); /* Couleur de fond */
+  border-radius: 8px; /* Coins arrondis */
 }
 
-/* Le thumb (la poignée) de la barre de défilement */
+/* Style de la poignée (thumb) de la barre de défilement */
 ::-webkit-scrollbar-thumb {
-  background: var(--color-primary-blue);
-  border-radius: 8px;
-  border: 3px solid var(--color-dark);
-  /* Ajoute un effet de gradient au survol */
-  background-image: var(--gradient-blue-dark);
+  background: var(--color-primary-blue); /* Couleur principale */
+  border-radius: 8px; /* Coins arrondis */
+  border: 3px solid var(--color-dark); /* Bordure pour la poignée */
+  background-image: var(--gradient-blue-dark); /* Gradient pour un effet cool */
 }
 
-/* Effet hover sur le thumb */
+/* Effet au survol de la poignée */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent);
+  background: var(--color-accent); /* Couleur au survol */
 }
 
-/* Pour Firefox */
+/* Style général de la barre de défilement pour Firefox */
 * {
-  scrollbar-width: thin; /* "auto" ou "thin" */
-  scrollbar-color: var(--color-primary-blue) var(--color-dark);
+  scrollbar-width: thin; /* Options : "auto", "thin", ou une taille fixe */
+  scrollbar-color: var(--color-primary-blue) var(--color-dark); /* Couleurs de la poignée et de la piste */
 }
 
-/* Le coin de la barre de défilement (intersection des barres horizontale et verticale) */
+/* Style du coin entre les barres horizontale et verticale */
 ::-webkit-scrollbar-corner {
-  background: var(--color-dark);
+  background: var(--color-dark); /* Même couleur que la piste */
+  border-radius: 8px; /* Coins arrondis pour plus de cohérence */
 }
 
 body {
@@ -242,8 +242,8 @@ main {
       0% {
         background-color: green;
       }
-      70% {
-        background-color: red; /* Instantané ici */
+      80% {
+        background-color: red;
       }
       100% {
         background-color: red;
