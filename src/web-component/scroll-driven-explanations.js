@@ -16,7 +16,7 @@ class ScrollDrivenExplanations extends HTMLElement {
         <div class="section">
           <h2>La Problématique des Animations Pilotées</h2>
           <p>
-            Avant l'introduction de <code>scroll()</code> et <code>view()</code>, les développeurs devaient s'appuyer sur JavaScript 
+            Avant l'introduction de <b>scroll()</b> et <b>view()</b>, les développeurs devaient s'appuyer sur JavaScript 
             pour créer des animations synchronisées avec le défilement de la page ou l'apparition des éléments à l'écran. 
             Cela posait plusieurs problèmes :
           </p>
@@ -26,7 +26,7 @@ class ScrollDrivenExplanations extends HTMLElement {
             <li>Incohérences entre navigateurs.</li>
           </ul>
           <p>
-            Avec les propriétés CSS comme <code>scroll()</code> et <code>view()</code>, les animations peuvent désormais être 
+            Avec les propriétés CSS comme <b>scroll()</b> et <b>view()</b>, les animations peuvent désormais être 
             directement liées aux événements de défilement ou de visibilité, simplifiant leur gestion et améliorant les performances.
           </p>
         </div>
@@ -34,7 +34,7 @@ class ScrollDrivenExplanations extends HTMLElement {
         <div class="section">
           <h2>Exemple Simple avec scroll()</h2>
           <p>
-            La propriété <code>scroll()</code> permet de synchroniser une animation avec la progression du défilement d'un 
+            La propriété <b>scroll()</b> permet de synchroniser une animation avec la progression du défilement d'un 
             élément ou de la page entière.
           </p>
           <code-viewer>
@@ -49,13 +49,12 @@ class ScrollDrivenExplanations extends HTMLElement {
   to { transform: scaleX(1); }
 }
           </code-viewer>
-          <div class="demo-box"></div>
         </div>
 
         <div class="section">
           <h2>Les Avancées Apportées par view()</h2>
           <p>
-            La propriété <code>view()</code> va plus loin en permettant de déclencher des animations en fonction de 
+            La propriété <b>view()</b> va plus loin en permettant de déclencher des animations en fonction de 
             la visibilité des éléments dans le viewport. Elle prend en charge plusieurs modes :
           </p>
           <ul>

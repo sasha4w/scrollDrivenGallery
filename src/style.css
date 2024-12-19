@@ -1,21 +1,58 @@
 :root {
   /* Couleurs principales */
-  --color-primary-orange: oklch(70% 0.25 50); /* Orange lumineux */
-  --color-secondary-orange: oklch(60% 0.2 40); /* Orange plus foncé */
-  --color-dark: oklch(20% 0.1 30); /* Noir profond */
-  --color-light: oklch(95% 0.02 20); /* Gris très clair presque blanc */
-  --color-accent: oklch(55% 0.3 20); /* Nuance d'orange plus riche */
+  --color-primary-blue: #3aafa9; /* Orange lumineux */
+  --color-secondary-blue: #2b7a78; /* Orange plus foncé */
+  --color-dark: #17252a; /* Noir profond */
+  --color-light: #feffff; /* Gris très clair presque blanc */
+  --color-accent: #def2f1; /* Nuance d'blue plus riche */
 
   /* Dégradés */
-  --gradient-orange-dark: linear-gradient(
+  --gradient-blue-dark: linear-gradient(
     to right,
-    var(--color-primary-orange),
-    var(--color-secondary-orange)
+    var(--color-primary-blue),
+    var(--color-secondary-blue)
   );
 
   /* Autres propriétés */
   background-color: var(--color-dark);
   color: var(--color-light);
+}
+/* Style de la barre de défilement pour Webkit (Chrome, Safari, Edge moderne) */
+::-webkit-scrollbar {
+  width: 12px; /* Largeur de la barre de défilement verticale */
+  height: 12px; /* Hauteur de la barre de défilement horizontale */
+  border-radius: 8px;
+}
+
+/* Le track (la piste) de la barre de défilement */
+::-webkit-scrollbar-track {
+  background: var(--color-dark);
+  border-radius: 8px;
+}
+
+/* Le thumb (la poignée) de la barre de défilement */
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-blue);
+  border-radius: 8px;
+  border: 3px solid var(--color-dark);
+  /* Ajoute un effet de gradient au survol */
+  background-image: var(--gradient-blue-dark);
+}
+
+/* Effet hover sur le thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Pour Firefox */
+* {
+  scrollbar-width: thin; /* "auto" ou "thin" */
+  scrollbar-color: var(--color-primary-blue) var(--color-dark);
+}
+
+/* Le coin de la barre de défilement (intersection des barres horizontale et verticale) */
+::-webkit-scrollbar-corner {
+  background: var(--color-dark);
 }
 
 body {
@@ -25,18 +62,18 @@ body {
 
 /* Styles de base avec la nouvelle palette */
 .scroll-watcher {
-  background-color: var(--color-primary-orange);
+  background-color: var(--color-primary-blue);
 }
 
 .scroller-item {
-  background-color: var(--color-secondary-orange);
+  background-color: var(--color-secondary-blue);
   color: var(--color-light);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 /* Styles de texte */
 h1 {
-  color: var(--color-primary-orange);
+  color: var(--color-primary-blue);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -44,10 +81,7 @@ p,
 figcaption {
   color: var(--color-light);
 }
-html {
-  background-color: oklch(69.87% 0.1228 291.18);
-  color: aliceblue;
-}
+
 img {
   max-width: 100%;
   height: auto;
@@ -120,7 +154,7 @@ main {
     position: fixed;
     top: 0;
     z-index: 1000;
-    background-color: oklch(70% 0.1 156);
+    background-color: green;
     width: 100dvw;
     transform-origin: left;
     animation: scroll-watcher linear;
@@ -176,7 +210,7 @@ main {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: oklch(80% 0.1 220); /* Couleur de fond pour les figures */
+    background-color: #17252a; /* Couleur de fond pour les figures */
     border-radius: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
@@ -206,13 +240,13 @@ main {
 
     @keyframes bg-shift {
       0% {
-        background-color: oklch(74.53% 0.219 144);
+        background-color: green;
       }
       70% {
-        background-color: oklch(57.35% 0.2018 4.24); /* Instantané ici */
+        background-color: red; /* Instantané ici */
       }
       100% {
-        background-color: oklch(57.35% 0.2018 4.24);
+        background-color: red;
       }
     }
   }
@@ -222,12 +256,14 @@ scroll-driven-explanations {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 1rem;
-  background-color: var(--color-secondary-orange, #333);
+  background-color: var(--color-secondary-blue, #333);
   color: var(--color-light, #fff);
   border-radius: 1rem;
 }
 scroll-driven-explanations h2 {
-  color: var(--color-primary-orange, #ff6600);
+  color: var(--color-primary-blue);
+  border-bottom: 2px solid var(--color-light);
+  padding-bottom: 0.5rem;
 }
 scroll-driven-explanations .section {
   margin-bottom: 2rem;
@@ -263,7 +299,7 @@ scroll-driven-compatibility .scroller-item {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: oklch(80% 0.1 220);
+  background-color: #17252a;
   border-radius: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -284,56 +320,8 @@ scroll-driven-compatibility .scroller-item figcaption {
   font-family: Arial, sans-serif;
   line-height: 1.6;
 }
-.section {
-  background-color: oklch(20% 0.1 30);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-h2 {
-  color: oklch(70% 0.25 50);
-  border-bottom: 2px solid oklch(70% 0.25 50);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-}
-p {
-  margin-bottom: 1rem;
-}
+
 ul {
   margin: 0 0 1rem 1.5rem;
   list-style-type: disc;
-}
-code {
-  background-color: oklch(15% 0.1 20);
-  color: oklch(70% 0.25 50);
-  padding: 0.2rem 0.4rem;
-  border-radius: 0.3rem;
-  font-family: "Courier New", monospace;
-}
-pre {
-  background-color: oklch(15% 0.1 20);
-  color: oklch(90% 0.2 70);
-  padding: 1rem;
-  border-radius: 0.5rem;
-  overflow-x: auto;
-}
-.demo-box {
-  height: 100px;
-  width: 100%;
-  background-color: oklch(70% 0.2 45);
-  border-radius: 0.5rem;
-  animation: color-shift 2s linear infinite;
-}
-
-@keyframes color-shift {
-  0% {
-    background-color: oklch(70% 0.2 45);
-  }
-  50% {
-    background-color: oklch(50% 0.3 60);
-  }
-  100% {
-    background-color: oklch(70% 0.2 45);
-  }
 }
