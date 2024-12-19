@@ -1,4 +1,6 @@
 import "./scroll-driven-compatibility.js";
+import "./scroll-images.js";
+import "./code-viewer-component.js";
 class ScrollDrivenExplanations extends HTMLElement {
   constructor() {
     super();
@@ -10,8 +12,6 @@ class ScrollDrivenExplanations extends HTMLElement {
 
   render() {
     this.innerHTML = `
-     
-
       <div class="explanation">
         <div class="section">
           <h2>La Problématique des Animations Pilotées</h2>
@@ -37,7 +37,7 @@ class ScrollDrivenExplanations extends HTMLElement {
             La propriété <code>scroll()</code> permet de synchroniser une animation avec la progression du défilement d'un 
             élément ou de la page entière.
           </p>
-          <pre><code>
+          <code-viewer>
 /* Exemple CSS */
 .progress-bar {
   animation: progress linear;
@@ -48,7 +48,7 @@ class ScrollDrivenExplanations extends HTMLElement {
   from { transform: scaleX(0); }
   to { transform: scaleX(1); }
 }
-          </code></pre>
+          </code-viewer>
           <div class="demo-box"></div>
         </div>
 
@@ -63,7 +63,7 @@ class ScrollDrivenExplanations extends HTMLElement {
             <li><strong>Exit</strong> : Animation lorsque l'élément quitte le viewport.</li>
             <li><strong>Discrete</strong> : Pour des changements d'état discrets à des seuils spécifiques.</li>
           </ul>
-          <pre><code>
+          <code-viewer>
 /* Exemple CSS */
 .fade-in {
   opacity: 0;
@@ -82,7 +82,12 @@ class ScrollDrivenExplanations extends HTMLElement {
     transform: translateY(0);
   }
 }
-          </code></pre>
+          </code-viewer>
+          <scroll-images
+            sources="./src/img/chinese_gopher.jpg"
+            alts="Cover"
+            captions="Mascotte"
+          ></scroll-images>
         </div>
 
         <div class="section">
@@ -93,7 +98,7 @@ class ScrollDrivenExplanations extends HTMLElement {
             <li>Transitions d'entrée/sortie pour des sections.</li>
             <li>Mise à jour discrète des états visuels d'éléments spécifiques.</li>
           </ul>
-          <pre><code>
+          <code-viewer>
 /* Exemple CSS avancé */
 .parallax-section {
   animation: parallax linear;
@@ -106,7 +111,7 @@ class ScrollDrivenExplanations extends HTMLElement {
   animation-timeline: view();
   animation-range: cover 0 cover 100%;
 }
-          </code></pre>
+          </code-viewer>
         </div>
 
         <div class="section">

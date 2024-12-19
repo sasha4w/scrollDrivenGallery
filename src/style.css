@@ -219,7 +219,7 @@ main {
 }
 scroll-driven-explanations {
   display: block;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 2rem auto;
   padding: 1rem;
   background-color: var(--color-secondary-orange, #333);
@@ -279,7 +279,7 @@ scroll-driven-compatibility .scroller-item figcaption {
   padding: 0 0.5rem;
 }
 .explanation {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   font-family: Arial, sans-serif;
   line-height: 1.6;
