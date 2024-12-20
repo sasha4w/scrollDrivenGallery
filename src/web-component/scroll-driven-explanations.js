@@ -2,6 +2,7 @@ import "./scroll-driven-compatibility.js";
 import "./scroll-images.js";
 import "./code-viewer-component.js";
 import "./browser-compatibility.js";
+import "./scroll-column.js";
 class ScrollDrivenExplanations extends HTMLElement {
   constructor() {
     super();
@@ -113,6 +114,8 @@ class ScrollDrivenExplanations extends HTMLElement {
   animation-range: cover 0 cover 100%;
 }
           </code-viewer>
+          <p> voici une animation un peu plus complexe utilisant le scroll</p>
+          <scroll-columns></scroll-columns>
         </div>
 
         <div class="section">

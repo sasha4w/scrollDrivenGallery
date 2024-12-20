@@ -333,76 +333,47 @@ ul {
   font-size: 1.5rem;
   color: aliceblue;
 }
-/* Three column layout */
+
 .columns {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  overflow-y: auto;
+  max-height: 400px;
+  height: 100%;
 }
 
 .column {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
-* Shift entire column up,
-but not so much that it goes out of view */ .column-reverse {
-  transform: translateY(calc(-100% + 100vh));
-}
-/* As we're about to shift content out of .columns, we need it to hide its overflow */
-.columns {
-  overflow-y: scroll;
-}
-/* Flip item order in reversed columns */
 .column-reverse {
+  transform: translateY(calc(-100% + 400px));
   flex-direction: column-reverse;
-}
-/* Flip item order in reversed columns */
-.column-reverse {
-  flex-direction: column-reverse;
-}
-/* Hook our animation with the timeline to our columns */
-.column-reverse {
   animation: adjust-position linear forwards;
   animation-timeline: scroll(root block);
-}
-/* Set up the scrollable container for columns */
-.columns {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  overflow-y: auto; /* Make the .columns scrollable */
-  max-height: 100vh; /* Constrain height to viewport */
-  height: 100%; /* Ensure it takes the full height */
-}
-
-/* Column setup */
-.column {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Initial transformation and animation for reversed columns */
-.column-reverse {
-  transform: translateY(100%); /* Initially shift column upwards */
-  /* Hook animation to timeline */
+  transform: translateY(100%);
   animation: adjust-position linear forwards;
   animation-timeline: scroll();
   animation-duration: 100%;
 }
 
-/* Set up the animation */
+.column img {
+  border-radius: 10px;
+  padding: 5px;
+}
+
 @keyframes adjust-position {
-  /* Start position: shift the entire column up */
   from {
     transform: translateY(-100%);
   }
 
-  /* End position: shift the entire column to its natural position */
   to {
     transform: translateY(0);
   }
 }
 
-/* Optional additional rules to ensure smooth scrolling and animations */
 .columns {
-  scroll-snap-type: y mandatory; /* Make scroll snapping mandatory */
-  scroll-behavior: smooth; /* Smooth scrolling */
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
