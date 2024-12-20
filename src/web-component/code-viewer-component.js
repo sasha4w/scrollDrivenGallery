@@ -1,17 +1,17 @@
 class CodeViewer extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: 'open' });
+    this.attachShadow({ mode: "open" });
   }
 
   // Fonction pour échapper les caractères HTML spéciaux
   escapeHtml(text) {
     return text
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#039;');
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
   }
 
   // Fonction pour coloriser le code CSS
@@ -81,7 +81,7 @@ class CodeViewer extends HTMLElement {
 
     // Récupérer le contenu entre les balises
     const code = this.innerHTML;
-    
+
     const html = `
       <div class="container">
         <div class="titlebar">
@@ -91,7 +91,9 @@ class CodeViewer extends HTMLElement {
             <div class="button maximize"></div>
           </div>
         </div>
-        <pre class="code-content"><code>${this.highlightCSS(this.escapeHtml(code))}</code></pre>
+        <pre class="code-content"><code>${this.highlightCSS(
+          this.escapeHtml(code)
+        )}</code></pre>
       </div>
     `;
 
@@ -99,4 +101,4 @@ class CodeViewer extends HTMLElement {
   }
 }
 
-customElements.define('code-viewer', CodeViewer);
+customElements.define("code-viewer", CodeViewer);

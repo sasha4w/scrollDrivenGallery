@@ -19,14 +19,14 @@ class ScrollDrivenCompatibility extends HTMLElement {
 
   get defaultBrowsers() {
     return [
-      { name: "Google Chrome", img: "./src/img/Chrome.svg" },
-      { name: "Opera", img: "./src/img/Opera.svg" },
-      { name: "Samsung Internet", img: "./src/img/Samsung.svg" },
-      { name: "Microsoft Edge", img: "./src/img/Edge.svg" },
-      { name: "Safari", img: "./src/img/Safari.svg" },
-      { name: "Mozilla Firefox", img: "./src/img/Firefox.svg" },
-      { name: "QQ Browser", img: "./src/img/QQ.svg" },
-      { name: "Baidu Browser", img: "./src/img/Baidu.svg" },
+      { name: "Google Chrome", img: "./src/img/Chrome.svg", class: "icon" },
+      { name: "Opera", img: "./src/img/Opera.svg", class: "icon" },
+      { name: "Samsung Internet", img: "./src/img/Samsung.svg", class: "icon" },
+      { name: "Microsoft Edge", img: "./src/img/Edge.svg", class: "icon" },
+      { name: "Safari", img: "./src/img/Safari.svg", class: "icon" },
+      { name: "Mozilla Firefox", img: "./src/img/Firefox.svg", class: "icon" },
+      { name: "QQ Browser", img: "./src/img/QQ.svg", class: "icon" },
+      { name: "Baidu Browser", img: "./src/img/Baidu.svg", class: "icon" },
     ];
   }
 

@@ -3,7 +3,7 @@ import "./scroll-images.js";
 import "./code-viewer-component.js";
 import "./browser-compatibility.js";
 import "./scroll-column.js";
-class ScrollDrivenExplanations extends HTMLElement {
+class ScrollDrivenApp extends HTMLElement {
   constructor() {
     super();
   }
@@ -184,4 +184,4 @@ class ScrollDrivenExplanations extends HTMLElement {
   }
 }
 
-customElements.define("scroll-driven-explanations", ScrollDrivenExplanations);
+customElements.define("scroll-app", ScrollDrivenApp);
