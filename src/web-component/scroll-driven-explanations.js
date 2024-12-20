@@ -101,18 +101,34 @@ class ScrollDrivenExplanations extends HTMLElement {
             <li>Mise à jour discrète des états visuels d'éléments spécifiques.</li>
           </ul>
           <code-viewer>
-/* Exemple CSS avancé */
-.parallax-section {
-  animation: parallax linear;
+.column-reverse {
+  transform: translateY(calc(-100% + 400px));
+  flex-direction: column-reverse;
+  animation: adjust-position linear forwards;
   animation-timeline: scroll();
-  animation-range: entry 0 exit 100%;
+  animation-duration: 100%;
 }
 
-.state-change {
-  animation: change step-end;
-  animation-timeline: view();
-  animation-range: cover 0 cover 100%;
+.column img {
+  border-radius: 10px;
+  padding: 5px;
 }
+
+@keyframes adjust-position {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.columns {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
           </code-viewer>
           <p> voici une animation un peu plus complexe utilisant le scroll</p>
           <scroll-columns></scroll-columns>

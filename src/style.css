@@ -13,14 +13,12 @@
     var(--color-secondary-blue)
   );
 
-  /* Autres propriétés */
   background-color: var(--color-dark);
   color: var(--color-light);
 }
-/* Style de la barre de défilement pour Webkit (Chrome, Safari, Edge moderne) */
 ::-webkit-scrollbar {
-  width: 16px; /* Augmenter la largeur de la barre de défilement verticale */
-  height: 16px; /* Augmenter la hauteur de la barre de défilement horizontale */
+  width: 16px;
+  height: 16px;
   border-radius: 8px;
 }
 
@@ -80,27 +78,28 @@ body {
 h1 {
   color: var(--color-primary-blue);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 3rem;
 }
-
+h2 {
+  padding: 2rem;
+}
 p,
 figcaption {
   color: var(--color-light);
+  text-align: center;
 }
 
 img {
   max-width: 100%;
   height: auto;
 }
-h1 {
-  font-size: 4rem;
+ul {
+  margin: 0 0 1rem 1.2rem;
+  list-style-type: disc;
+  font-size: 1.2rem;
+  color: aliceblue;
 }
-p {
-  font-size: 2rem;
-}
-.icon {
-  width: 20rem;
-  height: 20rem;
-}
+
 main {
   margin-top: 300px;
 }
@@ -115,6 +114,10 @@ main {
     max-width: 100%;
   }
 }
+p {
+  padding: 1rem;
+}
+
 /* Animation header */
 
 /* Définir l'animation du header */
@@ -229,8 +232,7 @@ main {
   }
 
   .scroller-item figcaption {
-    font-size: 1.5rem; /* Taille du texte de la légende */
-    color: aliceblue;
+    color: var(--color-light);
     padding: 0 0.5rem; /* Ajout d'un padding pour éviter que le texte touche les bords */
   }
 
@@ -316,8 +318,7 @@ scroll-driven-compatibility .scroller-item img {
   margin-bottom: 0.5rem;
 }
 scroll-driven-compatibility .scroller-item figcaption {
-  font-size: 1.5rem;
-  color: aliceblue;
+  color: var(--color-light);
   padding: 0 0.5rem;
 }
 .explanation {
@@ -325,13 +326,6 @@ scroll-driven-compatibility .scroller-item figcaption {
   margin: 0 auto;
   font-family: Arial, sans-serif;
   line-height: 1.6;
-}
-
-ul {
-  margin: 0 0 1rem 1.5rem;
-  list-style-type: disc;
-  font-size: 1.5rem;
-  color: aliceblue;
 }
 
 .columns {
@@ -350,9 +344,6 @@ ul {
 .column-reverse {
   transform: translateY(calc(-100% + 400px));
   flex-direction: column-reverse;
-  animation: adjust-position linear forwards;
-  animation-timeline: scroll(root block);
-  transform: translateY(100%);
   animation: adjust-position linear forwards;
   animation-timeline: scroll();
   animation-duration: 100%;

@@ -24,6 +24,9 @@ class ScrollColumns extends HTMLElement {
         <img src="./src/img/george.jpg" alt="Image 2" />
         <img src="./src/img/george.jpg" alt="Image 2" />
         <img src="./src/img/sonic.jpg" alt="Image 9" />
+        <img src="./src/img/sonic.jpg" alt="Image 9" />
+        <img src="./src/img/sonic.jpg" alt="Image 9" />
+        
       </div>
     </div>
     `;
