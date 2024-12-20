@@ -1,12 +1,12 @@
 :root {
-  /* Couleurs principales */
-  --color-primary-blue: #3aafa9; /* Orange lumineux */
-  --color-secondary-blue: #2b7a78; /* Orange plus foncé */
-  --color-dark: #17252a; /* Noir profond */
-  --color-light: #feffff; /* Gris très clair presque blanc */
-  --color-accent: #def2f1; /* Nuance d'blue plus riche */
+  /* Définition des couleurs principales utilisées dans le design */
+  --color-primary-blue: #3aafa9;
+  --color-secondary-blue: #2b7a78;
+  --color-dark: #17252a;
+  --color-light: #feffff;
+  --color-accent: #def2f1;
 
-  /* Dégradés */
+  /* Dégradé utilisé dans certains éléments */
   --gradient-blue-dark: linear-gradient(
     to right,
     var(--color-primary-blue),
@@ -16,73 +16,58 @@
   background-color: var(--color-dark);
   color: var(--color-light);
 }
+
+/* Personnalisation de la barre de défilement */
 ::-webkit-scrollbar {
   width: 16px;
   height: 16px;
   border-radius: 8px;
 }
 
-/* Style de la piste (track) de la barre de défilement */
 ::-webkit-scrollbar-track {
-  background: var(--color-dark); /* Couleur de fond */
-  border-radius: 8px; /* Coins arrondis */
+  background: var(--color-dark);
+  border-radius: 8px;
 }
 
-/* Style de la poignée (thumb) de la barre de défilement */
 ::-webkit-scrollbar-thumb {
-  background: var(--color-primary-blue); /* Couleur principale */
-  border-radius: 8px; /* Coins arrondis */
-  border: 3px solid var(--color-dark); /* Bordure pour la poignée */
-  background-image: var(--gradient-blue-dark); /* Gradient pour un effet cool */
+  background: var(--color-primary-blue);
+  border-radius: 8px;
+  border: 3px solid var(--color-dark);
+  background-image: var(--gradient-blue-dark);
 }
 
-/* Effet au survol de la poignée */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent); /* Couleur au survol */
+  background: var(--color-accent);
 }
 
-/* Changer de curseur lorsqu'on maintient le clic sur la poignée */
 ::-webkit-scrollbar-thumb:active {
-  cursor: grabbing; /* Change le curseur en "grabbing" lors du clic */
+  cursor: grabbing;
 }
 
-/* Style général de la barre de défilement pour Firefox */
+/* Personnalisation de la barre de défilement pour Firefox */
 * {
-  scrollbar-width: thin; /* Options : "auto", "thin", ou une taille fixe */
-  scrollbar-color: var(--color-primary-blue) var(--color-dark); /* Couleurs de la poignée et de la piste */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary-blue) var(--color-dark);
 }
 
-/* Style du coin entre les barres horizontale et verticale */
 ::-webkit-scrollbar-corner {
-  background: var(--color-dark); /* Même couleur que la piste */
-  border-radius: 8px; /* Coins arrondis pour plus de cohérence */
+  background: var(--color-dark);
+  border-radius: 8px;
 }
 
+/* Styles généraux du corps de la page */
 body {
   background-color: var(--color-dark);
   color: var(--color-light);
 }
 
-/* Styles de base avec la nouvelle palette */
-.scroll-watcher {
-  background-color: var(--color-primary-blue);
-}
-
-.scroller-item {
-  background-color: var(--color-secondary-blue);
-  color: var(--color-light);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-/* Styles de texte */
+/* Styles pour les éléments comme les images, les titres et les paragraphes */
 h1 {
   color: var(--color-primary-blue);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   font-size: 3rem;
 }
-h2 {
-  padding: 2rem;
-}
+
 p,
 figcaption {
   color: var(--color-light);
@@ -93,9 +78,10 @@ img {
   max-width: 100%;
   height: auto;
 }
+
 ul {
   margin: 0 0 1rem 1.2rem;
-  list-style-type: disc;
+  list-style-type: circle;
   font-size: 1.2rem;
   color: aliceblue;
 }
@@ -103,6 +89,8 @@ ul {
 main {
   margin-top: 300px;
 }
+
+/* Styles réactifs pour les écrans de différentes tailles */
 @media (min-width: 768px) {
   img {
     max-width: 100%;
@@ -114,36 +102,32 @@ main {
     max-width: 100%;
   }
 }
-p {
-  padding: 1rem;
-}
 
-/* Animation header */
-
-/* Définir l'animation du header */
+/* Styles spécifiques à l'en-tête avec une animation */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 9999;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
   color: white;
   padding: 20px;
   opacity: 1;
   animation: fade-out 2s linear forwards;
-  animation-delay: 3s; /* Délai avant que l'animation commence */
+  animation-delay: 3s;
   animation-timeline: view();
   animation-range: exit();
 }
 
-/* Animation fade-out */
+/* Animation pour l'effet de disparition de l'en-tête */
 @keyframes fade-out {
   to {
     opacity: 0;
   }
 }
 
+/* Image en arrière-plan de l'en-tête */
 .header-image {
   grid-column: 1 /-1;
   position: absolute;
@@ -155,15 +139,15 @@ p {
   z-index: -1;
 }
 
+/* Animation de la barre de défilement pour la progression */
 @media (prefers-reduced-motion: no-preference) {
-  /* la progress scroll en fonction du scrollbar général */
   .scroll-watcher {
     height: 1rem;
     position: fixed;
     top: 0;
     z-index: 1000;
     background-color: green;
-    width: 97dvw;
+    width: 97vw;
     transform-origin: left;
     animation: scroll-watcher linear;
     animation-timeline: scroll();
@@ -176,8 +160,7 @@ p {
     }
   }
 
-  /* Image apparition avec le fait d'entrée dans la view */
-
+  /* Animation de l'apparition des images lors du défilement */
   figure > img {
     scale: 0.8;
     opacity: 0;
@@ -185,6 +168,7 @@ p {
     animation-timeline: view();
     animation-range: entry;
   }
+
   @keyframes fade-in {
     to {
       scale: 1;
@@ -193,7 +177,7 @@ p {
   }
 
   .scroller {
-    height: 25rem; /* Ajustée pour mieux contenir les figures */
+    height: 25rem;
     display: flex;
     align-items: center;
     overflow-x: auto;
@@ -212,14 +196,14 @@ p {
 
   .scroller-item {
     flex: 0 0 auto;
-    width: 18rem; /* Taille des figures */
-    height: 20rem; /* Hauteur ajustée */
+    width: 18rem;
+    height: 20rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #17252a; /* Couleur de fond pour les figures */
+    background-color: #17252a;
     border-radius: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
@@ -227,69 +211,75 @@ p {
   .scroller-item img {
     max-width: 100%;
     height: 180px;
-    border-radius: 0.5rem; /* Coins légèrement arrondis */
-    margin-bottom: 0.5rem; /* Espacement avec la légende */
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
   .scroller-item figcaption {
     color: var(--color-light);
-    padding: 0 0.5rem; /* Ajout d'un padding pour éviter que le texte touche les bords */
+    padding: 0 0.5rem;
   }
 
-  /* Animation scroll-timeline */
-  @media (prefers-reduced-motion: no-preference) {
-    .scroller[data-animated="true"] .scroller__inner {
-      animation: bg-shift linear;
-      animation-timeline: scroll(inline);
-    }
-    .scroller[data-direction="right"] .scroller__inner {
-      animation-direction: reverse;
-    }
+  /* Animation de l'effet de changement de fond lors du défilement */
+  .scroller[data-animated="true"] .scroller__inner {
+    animation: bg-shift linear;
+    animation-timeline: scroll(inline);
+  }
 
-    @keyframes bg-shift {
-      0% {
-        background-color: green;
-      }
-      80% {
-        background-color: red;
-      }
-      100% {
-        background-color: red;
-      }
+  .scroller[data-direction="right"] .scroller__inner {
+    animation-direction: reverse;
+  }
+
+  @keyframes bg-shift {
+    0% {
+      background-color: green;
+    }
+    80% {
+      background-color: red;
+    }
+    100% {
+      background-color: red;
     }
   }
 }
-scroll-driven-explanations {
+
+/* Explications avec un design spécifique */
+.scroll-driven-explanations {
   display: block;
   max-width: 1200px;
   margin: 2rem auto;
   padding: 1rem;
-  background-color: var(--color-secondary-blue, #333);
-  color: var(--color-light, #fff);
+  background-color: var(--color-secondary-blue);
+  color: var(--color-light);
   border-radius: 1rem;
 }
-scroll-driven-explanations h2 {
+
+.scroll-driven-explanations h2 {
   color: var(--color-primary-blue);
   border-bottom: 2px solid var(--color-light);
   padding-bottom: 0.5rem;
 }
-scroll-driven-explanations .section {
+
+.scroll-driven-explanations .section {
   margin-bottom: 2rem;
   padding: 1rem;
-  background-color: var(--color-dark, #222);
+  background-color: var(--color-dark);
   border-radius: 0.5rem;
 }
-scroll-driven-compatibility {
+
+.scroll-driven-compatibility {
   display: block;
 }
-scroll-driven-compatibility .scroller {
+
+.scroll-driven-compatibility .scroller {
   height: 25rem;
   display: flex;
   align-items: center;
   overflow-x: auto;
   border-radius: 1rem;
 }
-scroll-driven-compatibility .scroller__inner {
+
+.scroll-driven-compatibility .scroller__inner {
   height: 100%;
   display: flex;
   align-items: center;
@@ -298,7 +288,8 @@ scroll-driven-compatibility .scroller__inner {
   flex-wrap: nowrap;
   width: max-content;
 }
-scroll-driven-compatibility .scroller-item {
+
+.scroll-driven-compatibility .scroller-item {
   flex: 0 0 auto;
   width: 18rem;
   height: 20rem;
@@ -311,23 +302,20 @@ scroll-driven-compatibility .scroller-item {
   border-radius: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-scroll-driven-compatibility .scroller-item img {
+
+.scroll-driven-compatibility .scroller-item img {
   max-width: 100%;
   height: auto;
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
 }
-scroll-driven-compatibility .scroller-item figcaption {
+
+.scroll-driven-compatibility .scroller-item figcaption {
   color: var(--color-light);
   padding: 0 0.5rem;
 }
-.explanation {
-  max-width: 1200px;
-  margin: 0 auto;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-}
 
+/* Grille de colonnes avec défilement vertical */
 .columns {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -341,6 +329,8 @@ scroll-driven-compatibility .scroller-item figcaption {
   flex-direction: column;
   gap: 10px;
 }
+
+/* Animation pour ajuster la position des colonnes */
 .column-reverse {
   transform: translateY(calc(-100% + 400px));
   flex-direction: column-reverse;
@@ -349,21 +339,23 @@ scroll-driven-compatibility .scroller-item figcaption {
   animation-duration: 100%;
 }
 
+/* Style des images dans les colonnes */
 .column img {
   border-radius: 10px;
   padding: 5px;
 }
 
+/* Animation pour ajuster la position */
 @keyframes adjust-position {
   from {
     transform: translateY(-100%);
   }
-
   to {
     transform: translateY(0);
   }
 }
 
+/* Comportement de défilement avec snap */
 .columns {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
