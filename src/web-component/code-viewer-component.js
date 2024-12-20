@@ -30,7 +30,7 @@ class CodeViewer extends HTMLElement {
       :host {
         display: block;
         font-family: 'Consolas', 'Courier New', monospace;
-        font-size: 14px;
+        font-size: 1.5rem;
       }
 
       .container {

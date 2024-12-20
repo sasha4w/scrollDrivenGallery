@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Alpino-Regular";
+  src: url("./font/Alpino-Regular.woff2") format("woff2"),
+    url("./font/Alpino-Regular.woff") format("woff"),
+    url("./font/Alpino-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
 :root {
   /* Définition des couleurs principales utilisées dans le design */
   --color-primary-blue: #3aafa9;
@@ -59,19 +68,24 @@
 body {
   background-color: var(--color-dark);
   color: var(--color-light);
+  font-family: "Alpino-Regular";
 }
 
 /* Styles pour les éléments comme les images, les titres et les paragraphes */
 h1 {
   color: var(--color-primary-blue);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  font-size: 3rem;
+  font-size: 4rem;
+}
+p {
+  font-size: 2rem;
 }
 
 p,
 figcaption {
   color: var(--color-light);
   text-align: center;
+  font-size: 2rem;
 }
 
 img {
@@ -80,9 +94,9 @@ img {
 }
 
 ul {
-  margin: 0 0 1rem 1.2rem;
+  margin: 0 0 1rem 2rem;
   list-style-type: circle;
-  font-size: 1.2rem;
+  font-size: 2rem;
   color: aliceblue;
 }
 
@@ -251,7 +265,7 @@ scroll-app {
   display: block;
   max-width: 1200px;
   margin: 2rem auto;
-  padding: 1rem;
+  padding: 3rem;
   background-color: var(--color-secondary-blue);
   color: var(--color-light);
   border-radius: 1rem;
