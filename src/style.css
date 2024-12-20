@@ -116,9 +116,22 @@ main {
     max-width: 100%;
   }
 }
+.browser-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.compatibility-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Si vous voulez ajuster la taille des icônes de navigateurs, vous pouvez aussi modifier leur classe .icon */
 .icon {
-  width: 1rem;
-  height: auto;
+  width: 64px;
+  height: 64px;
 }
 /* Styles spécifiques à l'en-tête avec une animation */
 .header {
@@ -227,7 +240,6 @@ main {
 
   .scroller-item img {
     max-width: 100%;
-    height: 180px;
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
   }

@@ -17,6 +17,10 @@ class ScrollDrivenCompatibility extends HTMLElement {
     }
   }
 
+  get compatibleBrowsers() {
+    return ["Google Chrome", "Microsoft Edge", "Opera", "Samsung Internet"];
+  }
+
   get defaultBrowsers() {
     return [
       { name: "Google Chrome", img: "./src/img/Chrome.svg", class: "icon" },
@@ -40,18 +44,35 @@ class ScrollDrivenCompatibility extends HTMLElement {
     }
   }
 
+  isCompatible(browserName) {
+    return this.compatibleBrowsers.includes(browserName);
+  }
+
   render() {
     const browsers = this.parseJsonBrowsers();
-
     this.innerHTML = `
- 
       <div class="scroller" data-animated="true" data-direction="left">
         <div class="scroller__inner">
           ${browsers
             .map(
               (browser) => `
             <figure class="scroller-item">
-              <img src="${browser.img}" alt="${browser.name}" />
+              <div class="browser-container">
+                <img src="${browser.img}" alt="${browser.name}" class="${
+                browser.class
+              }" />
+                <img 
+                  src="./src/img/${
+                    this.isCompatible(browser.name) ? "check.svg" : "cross.svg"
+                  }" 
+                  alt="${
+                    this.isCompatible(browser.name)
+                      ? "Compatible"
+                      : "Non compatible"
+                  }"
+                  class="compatibility-icon"
+                />
+              </div>
               <figcaption>${browser.name}</figcaption>
             </figure>
           `
