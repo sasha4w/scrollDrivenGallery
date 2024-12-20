@@ -331,6 +331,7 @@ scroll-app .section {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding: 40px 0;
 }
 
 /* Animation pour ajuster la position des colonnes */

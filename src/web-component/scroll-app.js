@@ -96,8 +96,8 @@ class ScrollDrivenApp extends HTMLElement {
           <h2>Applications Avancées</h2>
           <p>Voici quelques cas d'usage pratiques :</p>
           <ul>
-            <li>Animations parallaxes synchronisées avec le défilement.</li>
-            <li>Transitions d'entrée/sortie pour des sections.</li>
+            <li>Les propriétés <b>view()</b> et <b>scroll()</b> peuvent être utiliser dans un scroll à l'intérieur d'un conteneur</li>
+            <li>Le scroll horizontal peut aussi être utiliser pour mettre en place des animations</li>
             <li>Mise à jour discrète des états visuels d'éléments spécifiques.</li>
           </ul>
           <code-viewer>
@@ -130,7 +130,7 @@ class ScrollDrivenApp extends HTMLElement {
 }
 
           </code-viewer>
-          <p> voici une animation un peu plus complexe utilisant le scroll</p>
+          <p> voici une animation un peu plus complexe utilisant le scroll d'un conteneur</p>
           <scroll-columns></scroll-columns>
         </div>
 
@@ -177,7 +177,7 @@ class ScrollDrivenApp extends HTMLElement {
             }
           </code-viewer>
         </div>
-        <p>Voici une animation qui utilise <b>view()</b> qui modifie le fond de couleur pour indiqué les navigateurs compatibles</p>
+        <p>Voici une animation qui utilise <b>view()</b> qui modifie le fond de couleur pour indiqué les navigateurs compatibles utilisant le scroll horizontal</p>
         <scroll-driven-compatibility> </scroll-driven-compatibility>
       </div>
     `;
