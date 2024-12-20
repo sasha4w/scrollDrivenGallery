@@ -233,7 +233,7 @@ main {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #17252a;
+    background-color: var(--color-primary-blue);
     border-radius: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
@@ -278,22 +278,22 @@ scroll-app {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 3rem;
-  background-color: var(--color-secondary-blue);
   color: var(--color-light);
   border-radius: 1rem;
 }
 
 scroll-app h2 {
-  color: var(--color-primary-blue);
+  color: var(--color-dark);
   border-bottom: 2px solid var(--color-light);
   padding-bottom: 0.5rem;
 }
 
 scroll-app .section {
   margin-bottom: 2rem;
-  padding: 1rem;
-  background-color: var(--color-dark);
-  border-radius: 0.5rem;
+  padding: 2rem;
+  background-color: var(--color-secondary-blue);
+  border-radius: 1rem;
+  box-shadow: 0px 4px 6px rgba(244, 241, 241, 0.1);
 }
 
 .scroll-driven-compatibility {
@@ -327,7 +327,7 @@ scroll-app .section {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #17252a;
+  background-color: var(--color-primary-blue);
   border-radius: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
