@@ -51,6 +51,7 @@ class ScrollDrivenExplanations extends HTMLElement {
   to { transform: scaleX(1); }
 }
           </code-viewer>
+          <p>Ainsi la barre que vous voyez progresser au fil du défilement de la page utiliser le <b>scroll()</b></p>
         </div>
 
         <div class="section">
@@ -66,28 +67,27 @@ class ScrollDrivenExplanations extends HTMLElement {
           </ul>
           <code-viewer>
 /* Exemple CSS */
-.fade-in {
-  opacity: 0;
-  animation: appear 1s ease-out;
-  animation-timeline: view();
-  animation-range: entry;
-}
+  /* Image apparition avec le fait d'entrée dans le viewport */
 
-@keyframes appear {
-  from {
+  figure > img {
+    scale: 0.8;
     opacity: 0;
-    transform: translateY(50px);
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  @keyframes fade-in {
+    to {
+      scale: 1;
+      opacity: 1;
+    }
   }
-}
           </code-viewer>
+          <p>Ainsi l'animation ci-dessous est enclenché uniquement quand l'élément est visible dans le viewport</p>
           <scroll-images
             sources="./src/img/sonic.jpg"
             alts="Cover"
-            captions="Mascotte"
+            captions="Sonic"
           ></scroll-images>
         </div>
 
@@ -128,9 +128,37 @@ class ScrollDrivenExplanations extends HTMLElement {
             <li><strong>Firefox</strong> : En cours de développement.</li>
           </ul>
           <p>
-            Pensez à fournir des fallbacks ou des alternatives basées sur JavaScript pour les navigateurs non compatibles.
+          Pensez à fournir des fallbacks ou des alternatives basées sur JavaScript pour les navigateurs non compatibles.
+          De plus  il est important de ne pas oublier d’implémenter des media queries pour les utilisateurs sensibles au mouvement. 
+          Cela permet de respecter leur préférence lorsqu'ils désactivent les animations à l’aide de la règle suivante :
+          <b> @media (prefers-reduced-motion: no-preference)</b>
           </p>
+          <code-viewer>
+                        @media (prefers-reduced-motion: no-preference) {
+                .scroller[data-animated="true"] .scroller__inner {
+                  animation: bg-shift linear;
+                  animation-timeline: scroll(inline);
+                }
+                .scroller[data-direction="right"] .scroller__inner {
+                  animation-direction: reverse;
+                }
+
+                @keyframes bg-shift {
+                  0% {
+                    background-color: green;
+                  }
+                  80% {
+                    background-color: red;
+                  }
+                  100% {
+                    background-color: red;
+                  }
+                }
+              }
+            }
+          </code-viewer>
         </div>
+        <p>Voici une animation qui utilise <b>view()</b> qui modifie le fond de couleur pour indiqué les navigateurs compatibles</p>
         <scroll-driven-compatibility> </scroll-driven-compatibility>
       </div>
     `;

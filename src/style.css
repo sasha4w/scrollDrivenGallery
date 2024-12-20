@@ -19,8 +19,8 @@
 }
 /* Style de la barre de défilement pour Webkit (Chrome, Safari, Edge moderne) */
 ::-webkit-scrollbar {
-  width: 12px; /* Largeur de la barre de défilement verticale */
-  height: 12px; /* Hauteur de la barre de défilement horizontale */
+  width: 16px; /* Augmenter la largeur de la barre de défilement verticale */
+  height: 16px; /* Augmenter la hauteur de la barre de défilement horizontale */
   border-radius: 8px;
 }
 
@@ -41,6 +41,11 @@
 /* Effet au survol de la poignée */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-accent); /* Couleur au survol */
+}
+
+/* Changer de curseur lorsqu'on maintient le clic sur la poignée */
+::-webkit-scrollbar-thumb:active {
+  cursor: grabbing; /* Change le curseur en "grabbing" lors du clic */
 }
 
 /* Style général de la barre de défilement pour Firefox */
@@ -155,10 +160,11 @@ main {
     top: 0;
     z-index: 1000;
     background-color: green;
-    width: 100dvw;
+    width: 97dvw;
     transform-origin: left;
     animation: scroll-watcher linear;
     animation-timeline: scroll();
+    border-radius: 0.2rem;
   }
 
   @keyframes scroll-watcher {
@@ -217,7 +223,7 @@ main {
 
   .scroller-item img {
     max-width: 100%;
-    height: auto;
+    height: 180px;
     border-radius: 0.5rem; /* Coins légèrement arrondis */
     margin-bottom: 0.5rem; /* Espacement avec la légende */
   }
@@ -324,4 +330,79 @@ scroll-driven-compatibility .scroller-item figcaption {
 ul {
   margin: 0 0 1rem 1.5rem;
   list-style-type: disc;
+  font-size: 1.5rem;
+  color: aliceblue;
+}
+/* Three column layout */
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+* Shift entire column up,
+but not so much that it goes out of view */ .column-reverse {
+  transform: translateY(calc(-100% + 100vh));
+}
+/* As we're about to shift content out of .columns, we need it to hide its overflow */
+.columns {
+  overflow-y: scroll;
+}
+/* Flip item order in reversed columns */
+.column-reverse {
+  flex-direction: column-reverse;
+}
+/* Flip item order in reversed columns */
+.column-reverse {
+  flex-direction: column-reverse;
+}
+/* Hook our animation with the timeline to our columns */
+.column-reverse {
+  animation: adjust-position linear forwards;
+  animation-timeline: scroll(root block);
+}
+/* Set up the scrollable container for columns */
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  overflow-y: auto; /* Make the .columns scrollable */
+  max-height: 100vh; /* Constrain height to viewport */
+  height: 100%; /* Ensure it takes the full height */
+}
+
+/* Column setup */
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Initial transformation and animation for reversed columns */
+.column-reverse {
+  transform: translateY(100%); /* Initially shift column upwards */
+  /* Hook animation to timeline */
+  animation: adjust-position linear forwards;
+  animation-timeline: scroll();
+  animation-duration: 100%;
+}
+
+/* Set up the animation */
+@keyframes adjust-position {
+  /* Start position: shift the entire column up */
+  from {
+    transform: translateY(-100%);
+  }
+
+  /* End position: shift the entire column to its natural position */
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Optional additional rules to ensure smooth scrolling and animations */
+.columns {
+  scroll-snap-type: y mandatory; /* Make scroll snapping mandatory */
+  scroll-behavior: smooth; /* Smooth scrolling */
 }
